@@ -11,6 +11,6 @@
   }
 
   angular
-    .module('blocChat')
+    .module('letsSlack')
     .controller('UsernameCtrl', ['$uibModalInstance', '$cookies', UsernameCtrl]);
 })();

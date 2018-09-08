@@ -74,6 +74,6 @@
   }
 
   angular
-    .module('blocChat')
+    .module('letsSlack')
     .factory('Message', ['$firebaseArray', '$cookies', Message]);
 })();

@@ -17,6 +17,6 @@
   }
 
   angular
-    .module('blocChat')
+    .module('letsSlack')
     .factory('Room', ['$firebaseArray', Room]);
 })();

@@ -1,5 +1,7 @@
 (function() {
-  function HomeCtrl(Room, Message, $uibModal, $cookies) {
+  function HomeCtrl(Room, Message, $uibModal, $cookies, Auth, $state) {
+    this.auth = Auth;
+
     /**
     * @desc Room object firebase array
     * @type {Object}
@@ -31,11 +33,15 @@
 
     this.animationsEnabled = true;
 
+    this.toggleAnimation = function() {
+      this.animationsEnabled = !this.animationsEnabled;
+    };
+
     /**
-    * @function open
+    * @function newRoom
     * @desc Opens the modal that creates new chat room with prompts for the room name
     */
-    this.open = function(){
+    this.newRoom = function(){
       var createRoom = $uibModal.open({
         animation: this.animationsEnabled,
         ariaLabelledBy: 'modal-title',
@@ -47,8 +53,36 @@
       });
     };
 
-    this.toggleAnimation = function() {
-      this.animationsEnabled = !this.animationsEnabled;
+    /**
+    * @function register
+    * @desc Opens modal that allows user to sign up
+    */
+    this.register = function() {
+      var register = $uibModal.open({
+        animation: this.animationsEnabled,
+        ariaLabelledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
+        templateUrl: '/templates/modal/register.html',
+        controller: 'AuthCtrl',
+        controllerAs: 'auth',
+        size: 'md',
+      });
+    };
+
+    /**
+    * @function login
+    * @desc Opens modal that allows user to log in
+    */
+    this.login = function() {
+      var login = $uibModal.open({
+        animation: this.animationsEnabled,
+        ariaLabelledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
+        templateUrl: '/templates/modal/login.html',
+        controller: 'AuthCtrl',
+        controllerAs: 'auth',
+        size: 'md',
+      });
     };
 
     /**
@@ -61,9 +95,18 @@
       Message.send(this.newMessage, this.roomId);
       this.newMessage = '';
     };
+
+    this.logout = function() {
+      Auth.$signOut().then(function(auth) {
+        $state.go('home');
+        alert("Successfully logged out")
+      }, function(error) {
+        this.error = error;
+      });
+    };
   }
 
   angular
-    .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', HomeCtrl]);
+    .module('letsSlack')
+    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', 'Auth', '$state', HomeCtrl]);
 })();

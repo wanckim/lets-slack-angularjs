@@ -6,6 +6,6 @@
   }
 
   angular
-    .module('blocChat')
+    .module('letsSlack')
     .factory('Auth', ['$firebaseAuth', Auth]);
 })();

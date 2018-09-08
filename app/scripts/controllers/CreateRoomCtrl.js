@@ -12,6 +12,6 @@
   }
 
   angular
-    .module('blocChat')
+    .module('letsSlack')
     .controller('CreateRoomCtrl', ['$uibModalInstance', 'Room', CreateRoomCtrl]);
 })();

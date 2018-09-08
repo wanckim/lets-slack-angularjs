@@ -10,11 +10,21 @@
       .state('home', {
         url: '/',
         controller: 'HomeCtrl as home',
-        templateUrl: '/templates/home.html'
+        templateUrl: '/templates/home.html',
+        resolve: {
+          requireNoAuth: function($state, Auth) {
+            Auth.$requireSignIn().then(function(auth) {
+              console.log(auth.email);
+              // $state.go('home');
+            }, function(error) {
+              return;
+            });
+          }
+        }
       });
   }
 
   angular
-    .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
+    .module('letsSlack', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
     .config(config);
 })();

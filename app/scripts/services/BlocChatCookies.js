@@ -27,6 +27,7 @@
   }
 
   angular
-    .module('blocChat')
-    .run(['$cookies', '$uibModal', BlocChatCookies]);
+    .module('letsSlack')
+    // .run(['$cookies', '$uibModal', BlocChatCookies]);
+    .factory(['$cookies', '$uibModal', BlocChatCookies]);
 })();

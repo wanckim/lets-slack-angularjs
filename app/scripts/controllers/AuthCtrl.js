@@ -29,6 +29,6 @@
   }
 
   angular
-    .module('blocChat')
+    .module('letsSlack')
     .controller('AuthCtrl', ['Auth', '$state', '$uibModalInstance', AuthCtrl]);
 })();

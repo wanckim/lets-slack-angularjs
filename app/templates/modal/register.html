@@ -1,0 +1,27 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Sign Up</h3>
+    </div>
+    <div class="modal-body">
+      <div ng-show="auth.error">
+        <span>{{ auth.error.message }}</span>
+      </div>
+      <label>Please input email and password to create Let's Slack account.</label><br>
+    </div>
+    <form ng-submit="auth.register()" class="modal-form">
+      <div class="modal-input">
+        <div class="input-field">
+          <input type="email" placeholder="Email" ng-model="auth.user.email" autofocus>
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="Password" ng-model="auth.user.password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button ng-click="auth.cancel()" class="modal-button">Cancel</button>
+        <input type="submit" class="modal-button" value="Sign up">
+      </div>
+    </form>
+  </div>
+</div>

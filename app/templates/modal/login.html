@@ -1,0 +1,24 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-header" id="login-header">
+      <h3 class="modal-title">Log In</h3>
+    </div>
+    <div ng-show="auth.error">
+      <span>{{ auth.error.message }}</span>
+    </div>
+    <form ng-submit="auth.login()" class="modal-form">
+      <div class="modal-input">
+        <div class="input-field">
+          <input type="email" placeholder="Email" ng-model="auth.user.email" autofocus>
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="Password" ng-model="auth.user.password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button ng-click="auth.cancel()" class="modal-button">Cancel</button>
+        <input type="submit" class="modal-button" value="Log in">
+      </div>
+    </form>
+  </div>
+</div>

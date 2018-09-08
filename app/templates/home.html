@@ -1,0 +1,28 @@
+<header class="header">
+  <h1>Wan's Chat App</h1>
+  <div class="create-room">
+    <button type="button" ng-click="home.open()" class="create-button">New Room</button>
+  </div>
+</header>
+
+<section class="room-list">
+  <ul ng-repeat="room in home.rooms">
+    <li ng-click="home.allMessages(room.$id, room.$value)">{{room.$value}}</li>
+  </ul>
+</section>
+
+<main class="chat-area">
+  <div class="chat-area-header">
+    <span>{{home.roomTitle}}</span>
+  </div>
+  <div ng-repeat="msg in home.messages" class="message-list">
+    <span class="message" id="username">{{msg.username}}:<br></span>
+    <span class="message" id="content">{{msg.content}}</span>
+    <span class="message" id="sentAt">At: {{msg.sentAt}}<br></span>
+  </div>
+
+  <div class="send-message-area">
+    <button type="button" ng-click="home.sendMessage()" class="send-message-button">Send</button>
+    <input type="text" ng-model="home.newMessage" placeholder="Type in the message" class="message-input" />
+  </div>
+</main>

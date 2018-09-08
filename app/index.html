@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app='blocChat'>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bloc Chat Project</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+</head>
+<body>
+    <ui-view></ui-view>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <!-- AngularUI Router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+    <!-- FireBase -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDU2bWUxDXKXib01LfuZ-hfkhfCmbaJvdE",
+        authDomain: "bloc-chat-angularjs-c92c3.firebaseapp.com",
+        databaseURL: "https://bloc-chat-angularjs-c92c3.firebaseio.com",
+        projectId: "bloc-chat-angularjs-c92c3",
+        storageBucket: "bloc-chat-angularjs-c92c3.appspot.com",
+        messagingSenderId: "954803496447"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- AngularUI Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- Angular Cookie -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+
+    <!-- Application Files -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/CreateRoomCtrl.js"></script>
+    <script src="/scripts/controllers/UsernameCtrl.js"></script>
+    <script src="/scripts/services/Room.js"></script>
+    <script src="/scripts/services/Message.js"></script>
+    <script src="/scripts/services/BlocChatCookies.js"></script>
+</body>
+</html>

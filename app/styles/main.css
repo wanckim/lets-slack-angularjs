@@ -114,7 +114,7 @@ body {
   margin-right: 10px;
 }
 
-.btn {
+.button {
   display: inline-block;
   font-size: 14pt;
   background-color: #EEE;
@@ -124,7 +124,7 @@ body {
   color: #626262;
   text-decoration: none;
 }
-.btn:hover {
+.button:hover {
   background-color: #DDD;
   cursor: pointer;
 }

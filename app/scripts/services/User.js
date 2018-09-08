@@ -6,16 +6,16 @@
 
     User.all = users;
 
-    // User.add = function(name) {
-    //   users.$add(name);
-    // };
-
     User.getProfile = function(uid) {
       return $firebaseObject(userRef.child(uid));
     };
 
     User.getDisplayName = function(uid) {
       return users.$getRecord(uid).displayName;
+    };
+
+    User.getGravatar = function(uid) {
+      return '//www.gravatar.com/avatar/' + users.$getRecord(uid).emailHash;
     };
 
     return User;

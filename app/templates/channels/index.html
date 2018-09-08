@@ -1,0 +1,39 @@
+<div class="channel-main">
+  <section class="sidebar">
+
+    <!-- <div class="slack-name">
+      <h2>Let's Slack</h2>
+    </div> -->
+
+    <div class="my-info">
+      <img class="user-pic" ng-src="{{ channelCtrl.getGravatar(channelCtrl.profile.$id) }}" />
+      <div class="user-info">
+        <div class="user-name">
+          {{ channelCtrl.profile.displayName }}
+        </div>
+
+        <div class="options">
+          <a ui-sref="profile">edit profile</a>
+          /
+          <a href="#" ng-click="channelCtrl.logout()">Log out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-list">
+      <div class="list-head">Channels</div>
+      <div class="channel" ng-repeat="channel in channelCtrl.channels">
+        <a># {{ channel.name }}</a>
+      </div>
+
+      <div class="channel create">
+        <a ui-sref="channels.create">+ create channel</a>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="message-pane">
+    <ui-view></ui-view>
+  </main>
+</div>

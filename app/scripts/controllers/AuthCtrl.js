@@ -8,7 +8,7 @@
     this.login = function() {
       Auth.$signInWithEmailAndPassword(this.user.email, this.user.password).then(function(auth) {
         $uibModalInstance.close(console.log("Welcome \"" + auth.email + "\"!"));
-        $state.go('home');
+        $state.go('channels');
       }, function(error) {
         this.error = error;
       });

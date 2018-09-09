@@ -26,7 +26,11 @@
   animation-duration: 0.4s;
 }
 
-#login-header {
+.modal-content#login {
+  width: 350px;
+}
+
+.modal-header#login-header {
   background-color: #72638e;
 }
 

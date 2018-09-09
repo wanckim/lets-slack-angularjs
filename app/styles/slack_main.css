@@ -24,7 +24,7 @@
 
 .sidebar {
   display:inline-block;
-  width: 220px;
+  width: 250px;
   vertical-align: top;
   height: 100%;
   background: #4d394b;
@@ -53,10 +53,11 @@
 
 .sidebar .channel-list .channel a{
   display:block;
-  color:rgba(255,255,255,0.6);
-  padding:3px 0px 3px 15px;
+  color: #FFF;
+  padding:5px 0px 5px 15px;
   /*width:90%;*/
   font-weight:300;
+  text-decoration: none;
 
   -webkit-border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
@@ -67,7 +68,7 @@
 }
 
 .sidebar .channel-list .channel a:hover{
-  text-decoration: none;
+  /*text-decoration: none;*/
   background:#3E313C;
 }
 
@@ -77,16 +78,53 @@
   text-decoration: none !important;
 }
 
-.sidebar .channel-list .channel.create {
+.sidebar .channel-list .channel span {
+  color:rgba(255,255,255,0.6);
+}
+
+.sidebar .channel-list .channel#create {
+  width: 90%;
+  margin: 20px 0 0 10px;
   font-style: italic;
+  border: 2pt solid rgba(255,255,255,0.6);
+  border-radius: 20px;
+}
+
+.sidebar .channel-list .channel#create a {
+  color: rgba(255,255,255,0.6);
+}
+
+.sidebar .channel-list .channel#create a:hover {
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  color: #3E313C;
+}
+
+.sidebar .channel-list #channel-wrapper {
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+
+/* Scrollbar width */
+.sidebar .channel-list #channel-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Scrollbar Handle */
+.sidebar .channel-list #channel-wrapper::-webkit-scrollbar-thumb {
+    background: #aa96a9;
+    border-radius: 10px;
 }
 
 .sidebar .channel-list .list-head {
-  margin-top:10px;
-  color: #fff;
-  font-weight: bold;
-  margin-left: 10px;
-  text-transform: uppercase;
+  margin:10px 0 5px 15px;
+  color:rgba(255,255,255,0.6);
+}
+
+.sidebar .channel-list .channel .add-icon {
+  float:right;
+  font-size: 14pt;
+  margin-right: 25px;
 }
 
 .sidebar .my-info {
@@ -113,7 +151,8 @@
 
 .sidebar .my-info .user-info .user-name {
   color:#fff;
-  font-size:16px;
+  font-size:22px;
+  padding-bottom: 3px;
   font-weight:bold;
 }
 
@@ -147,12 +186,12 @@
   display: inline-block;
   vertical-align: top;
   /*height:100%;*/
-  width:80vw;
+  width:60vw;
   /*overflow-y:scroll;*/
-  padding:55px 15px 65px 15px;
+  padding: 0 15px 65px 15px;
 }
 
-.message-pane .header {
+.message-pane .message-header {
   position:fixed;
   top:0;
   background:#fff;
@@ -160,7 +199,7 @@
   z-index:2;
 }
 
-.message-pane .header h1 {
+.message-pane .message-header h1 {
   padding:12px 0 10px 0;
   margin-top:0px;
   margin-bottom:0px;
@@ -193,7 +232,7 @@
 .message-pane .message-wrap .message-info {
   display: inline-block;
   vertical-align: top;
-  padding-left:5px;
+  padding-left: 5px;
 }
 
 .message-pane .message-wrap .message-info .user-name {

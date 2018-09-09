@@ -1,18 +1,18 @@
-<header class="message-header">
+<header class="header">
   <h1>{{ messageCtrl.channelName }}</h1>
 </header>
 
 <main class="message-wrap" ng-repeat="message in messageCtrl.messages">
-  <!-- <img class="user-pic" ng-src="{{ channelCtrl.getGravatar(message.uid) }}" /> -->
-  <!-- <div class="message-info">
+  <img class="user-pic" ng-src="{{ channelCtrl.getGravatar(message.uid) }}" />
+  <div class="message-info">
     <div class="user-name">
       {{ channelCtrl.getDisplayName(message.uid) }}
-      <span class="timestamp">{{ message.timestamp | data:'short' }}</span>
-    </div> -->
+      <span class="timestamp">{{ message.timestamp | date:'short' }}</span>
+    </div>
     <div class="message">
       {{ message.body }}
     </div>
-  <!-- </div> -->
+  </div>
 </main>
 
 <form class="message-form" ng-submit="messageCtrl.sendMessage()">

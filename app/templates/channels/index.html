@@ -22,12 +22,17 @@
 
     <div class="channel-list">
       <div class="list-head">Channels</div>
-      <div class="channel" ng-repeat="channel in channelCtrl.channels">
-        <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected"># {{ channel.name }}</a>
-      </div>
-
-      <div class="channel create">
-        <a ui-sref="channels.create">+ create channel</a>
+      <section id="channel-wrapper">
+        <div class="channel" ng-repeat="channel in channelCtrl.channels">
+          <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected">
+            <span>#</span> <b>{{ channel.name }}</b>
+          </a>
+        </div>
+      </section>
+      <div class="channel" id="create">
+        <a ui-sref="channels.create">
+          create channel<ion-icon name="add-circle-outline" class="add-icon"></ion-icon>
+        </a>
       </div>
     </div>
 

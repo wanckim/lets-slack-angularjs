@@ -16,12 +16,10 @@
     this.newChannel = {
       name: ''
     };
-    
+
     this.createChannel = function() {
-      this.channels.$add(this.newChannel).then(function() {
-        this.newChannel = {
-          name: ''
-        };
+      this.channels.$add(this.newChannel).then(function(ref) {
+        $state.go('channels.messages', { channelId: ref.key });
       });
     };
   }

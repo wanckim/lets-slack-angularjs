@@ -69,6 +69,19 @@
         url: '/channels-create',
         controller: 'ChannelCtrl as channelCtrl',
         templateUrl: '/templates/channels/create.html'
+      })
+      .state('channels.messages', {
+        url: '/{channelId}/messages',
+        controller: 'MessageCtrl as messageCtrl',
+        templateUrl: '/templates/channels/messages.html',
+        resolve: {
+          messages: function($stateParams, Message) {
+            return Message.forChannel($stateParams.channelId).$loaded();
+          },
+          channelName: function($stateParams, channels) {
+            return '# '+channels.$getRecord($stateParams.channelId).name;
+          }
+        }
       });
   }
 

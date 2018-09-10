@@ -20,21 +20,33 @@
       </div>
     </div>
 
-    <div class="channel-list">
+    <section class="channel-list">
+      <div class="channel" id="create">
+        <a ui-sref="channels.create">
+          create channel<ion-icon name="add-circle-outline" class="list-icon"></ion-icon>
+        </a>
+      </div>
+
       <div class="list-head">Channels</div>
-      <section id="channel-wrapper">
+      <div class="wrapper" id="channel-wrap">
         <div class="channel" ng-repeat="channel in channelCtrl.channels">
           <a ui-sref="channels.messages({channelId: channel.$id})" ui-sref-active="selected">
             <span>#</span> <b>{{ channel.name }}</b>
           </a>
         </div>
-      </section>
-      <div class="channel" id="create">
-        <a ui-sref="channels.create">
-          create channel<ion-icon name="add-circle-outline" class="add-icon"></ion-icon>
-        </a>
       </div>
-    </div>
+
+      <hr class="section-divider"></hr>
+
+      <div class="list-head">Direct Messages</div>
+      <div class="wrapper" id="dir-msg-wrap">
+        <div class="channel" ng-repeat="user in channelCtrl.users">
+          <a ng-if="user.$id !== channelCtrl.profile.$id" ui-sref="channels.direct({uid: user.$id})" ng-sref-active="selected">
+            <span>></span></ion-icon><ion-icon name="text" class="list-icon"></ion-icon> <b>{{ user.displayName }}</b>
+          </a>
+        </div>
+      </div>
+    </section>
 
   </section>
 

@@ -79,7 +79,22 @@
             return Message.forChannel($stateParams.channelId).$loaded();
           },
           channelName: function($stateParams, channels) {
-            return '# '+channels.$getRecord($stateParams.channelId).name;
+            return '#'+channels.$getRecord($stateParams.channelId).name;
+          }
+        }
+      })
+      .state('channels.direct', {
+        url: '/{uid}/messages/direct',
+        controller: 'MessageCtrl as messageCtrl',
+        templateUrl: '/templates/channels/messages.html',
+        resolve: {
+          messages: function($stateParams, Message, profile) {
+            return Message.forUser($stateParams.uid, profile.$id).$loaded();
+          },
+          channelName: function($stateParams, User) {
+            return User.all.$loaded().then(function() {
+              return '@'+User.getDisplayName($stateParams.uid);
+            });
           }
         }
       });

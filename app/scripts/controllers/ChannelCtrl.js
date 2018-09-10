@@ -3,6 +3,7 @@
     this.profile = profile;
     this.channels = channels;
 
+    this.users = User.all;
     this.getDisplayName = User.getDisplayName;
     this.getGravatar = User.getGravatar;
 

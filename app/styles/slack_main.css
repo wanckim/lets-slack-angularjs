@@ -111,7 +111,12 @@
   float:right;
   font-size: 14pt;
   margin-right: 25px;
+  visibility: hidden;
 }
+
+/*.sidebar .channel-list .channel .list-icon.online {
+  visibility: visible;
+}*/
 
 .sidebar .channel-list .section-divider {
   width: 225px;
@@ -184,7 +189,7 @@
   width: 10px;
   height: 10px;
   background: #ab9ba9;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
 }
 
 .sidebar .presence.online {

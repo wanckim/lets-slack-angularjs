@@ -42,7 +42,9 @@
       <div class="wrapper" id="dir-msg-wrap">
         <div class="channel" ng-repeat="user in channelCtrl.users">
           <a ng-if="user.$id !== channelCtrl.profile.$id" ui-sref="channels.direct({uid: user.$id})" ng-sref-active="selected">
-            <span>></span></ion-icon><ion-icon name="text" class="list-icon"></ion-icon> <b>{{ user.displayName }}</b>
+            <span class="presence" ng-class="{online: user.online}"></span>
+            <b>{{ user.displayName }}</b>
+            <ion-icon name="text" class="list-icon" ng-class="{online: user.online}"></ion-icon>
           </a>
         </div>
       </div>

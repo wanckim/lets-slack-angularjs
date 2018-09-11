@@ -114,9 +114,9 @@
   visibility: hidden;
 }
 
-/*.sidebar .channel-list .channel .list-icon.online {
+.sidebar .channel-list .channel .list-icon.online {
   visibility: visible;
-}*/
+}
 
 .sidebar .channel-list .section-divider {
   width: 225px;

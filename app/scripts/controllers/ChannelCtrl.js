@@ -9,8 +9,11 @@
 
     this.logout = function() {
       alert("See you next time!");
-      Auth.$signOut().then(function() {
-        $state.go('home');
+      this.profile.online = null;
+      this.profile.$save().then(function() {
+        Auth.$signOut().then(function() {
+          $state.go('home');
+        });
       });
     };
 
@@ -23,6 +26,8 @@
         $state.go('channels.messages', { channelId: ref.key });
       });
     };
+
+    User.setOnline(profile.$id);
   }
 
   angular

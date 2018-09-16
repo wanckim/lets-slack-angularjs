@@ -1,10 +1,6 @@
 <div class="channel-main">
   <section class="sidebar">
 
-    <!-- <div class="slack-name">
-      <h2>Let's Slack</h2>
-    </div> -->
-
     <div class="my-info">
       <img class="user-pic" ng-src="{{ channelCtrl.getGravatar(channelCtrl.profile.$id) }}" />
       <div class="user-info">
@@ -20,7 +16,7 @@
       </div>
     </div>
 
-    <section class="channel-list">
+    <div class="channel-list">
       <div class="channel" id="create">
         <a ui-sref="channels.create">
           create channel<ion-icon name="add-circle-outline" class="list-icon"></ion-icon>
@@ -44,11 +40,11 @@
           <a ng-if="user.$id !== channelCtrl.profile.$id" ui-sref="channels.direct({uid: user.$id})" ng-sref-active="selected">
             <span class="presence" ng-class="{online: user.online}"></span>
             <b>{{ user.displayName }}</b>
-            <ion-icon name="text" class="list-icon" ng-class="{online: user.online}"></ion-icon>
+            <ion-icon name="text" class="list-icon" id="msg-icon" ng-class="{online: user.online}"></ion-icon>
           </a>
         </div>
       </div>
-    </section>
+    </div>
 
   </section>
 

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="message-header">
   <h1>{{ messageCtrl.channelName }}</h1>
 </header>
 
@@ -16,10 +16,10 @@
 </main>
 
 <form class="message-form" ng-submit="messageCtrl.sendMessage()">
-  <div class="input-group">
-    <input type="text" class="form-control" ng-model="messageCtrl.newMessage" placeholder="Type a message here">
+  <div class="message-area">
+    <input type="text" class="message-input" ng-model="messageCtrl.newMessage" placeholder="Type a message here">
     <span class="input-group-btn">
-      <button class="btn btn-default" type="submit">Send</button>
+      <button class="btn-send" type="submit">Send</button>
     </span>
   </div>
 </form>
